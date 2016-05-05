@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema 
+            xmlns:xsd              = "http://www.w3.org/2001/XMLSchema" 
+            xmlns                  = "http://www.mesa.org/xml/KPI-ML-V01-Extensions" 
+            targetNamespace        = "http://www.mesa.org/xml/KPI-ML-V01-Extensions" 
+            elementFormDefault     = "qualified" 
+            attributeFormDefault   = "unqualified">
+
+<xsd:annotation> 
+   <xsd:documentation>
+
+        Copyright 2015 MESA International 
+        All Rights Reserved. http://www.mesa.org
+
+        This MESA International work (including specifications, documents, 
+        software, and related items) referred to as the KPI Markup Language
+        (KPI-ML) is provided by the copyright holders under the following license. 
+
+        Permission to use, copy, modify, or redistribute this Work and its 
+        documentation, with or without modification, for any purpose and 
+        without fee or royalty is hereby granted provided that MESA
+	    International is acknowledged as the originator of this Work using the 
+        following statement:
+
+        "The KPI Markup Language (KPI-ML) is used courtesy of MESA International."
+
+        In no event shall MESA International, its members, or any 
+        third party be liable for any costs, expenses, losses, damages or 
+        injuries incurred by use of the Work or as a result of this 
+        agreement.
+          
+        KPI-ML is based upon the ISO 22400-1 Automation systems and integration - 
+	    Key performance indicators (KPIs) for manufacturing operations
+	    management - Part 1 Overview, concepts and terminology and the
+        ANSI/ISA-95.00.05-2006 Enterprise-Control System Integration 
+        Part 5: Business to Manufacturing Transactions. 
+   </xsd:documentation>
+
+   <xsd:documentation> 
+  
+      Revision History
+
+        Ver     Date            Person          Note
+        ---     ----            ------          ----
+        V01     1 May 2015     D. Brandl       Initial Version
+
+   </xsd:documentation>
+</xsd:annotation>
+
+<!-- 
+                        Purpose of Common Extensions Schema
+
+This Common Extensions schema is intended to be edited by users as required to extend KPI-ML 
+to meet project and product requirements. 
+
+A place holder has been added in the KPI-ML Common schema.  The place holder 
+is a substitution group that points to a group in this schema.  Any elements placed in a group
+in this schema can be used in KPI-ML XML documents using "Extended" as the namespace prefix.  
+
+The elements added to the groups may reference types defined earlier in this schema or in
+other schemas.  Additional schemas may be used to permit element definitions from different 
+vendors to be used on one project with minimal changes to the KPI-ML extensions schema,  
+and increasing clarity by assigning a vendor specific namespace prefix to each group 
+of elements when used in an XML document.
+
+-->
+
+    <xsd:group name = "KPIDefinition">
+        <xsd:sequence>
+            <!-- add extended elements here -->
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:group name = "KPIInstance">
+        <xsd:sequence>
+            <!-- add extended elements here -->
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:group name = "KPIResourceReference">
+        <xsd:sequence>
+            <!-- add extended elements here -->
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:group name = "KPIValue">
+        <xsd:sequence>
+            <!-- add extended elements here -->
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:group name = "Property">
+        <xsd:sequence>
+            <!-- add extended elements here -->
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:group name = "Range">
+        <xsd:sequence>
+            <!-- add extended elements here -->
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:group name = "ResourceReference">
+        <xsd:sequence>
+            <!-- add extended elements here -->
+        </xsd:sequence>
+    </xsd:group>
+        
+    <xsd:group name = "TimeRangeType">
+        <xsd:sequence>
+            <!-- add extended elements here -->
+        </xsd:sequence>
+    </xsd:group>
+        
+ </xsd:schema>
