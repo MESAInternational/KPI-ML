@@ -1,0 +1,5 @@
+To do:
+
+Discuss implementation topics with XML Committee
+
+Later, identify NuGet package hosting target location and update NuGet.Packager to publish to it.
