@@ -5,59 +5,63 @@
 //  Created on:      22-Oct-2015 10:06:06 PM
 //  Original author: dnbrandl
 //  Code generator/author: kjsmiley
-//  Last revised 2016-08-03
+//  Last revised 2016-08-05
 //  The KPI Markup Language (KPI-ML) is used courtesy of MESA International. 
 ///////////////////////////////////////////////////////////
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
 
-
-
-/// <summary>
-/// MESA KPI Definition Property class.
-/// See http://mesa.org/en/kpiml.asp for more information.
-/// </summary>
-public class KPI_Definition_Property {
-
-	/// <summary>
-	/// Description text(s) for this Property of the
-	/// KPI Definition. Optional.
-	/// </summary>
-	public List<string> Description = new List<string>{};
-	/// <summary>
-	/// Unique identifier for this Property of the KPI Definition.
-	/// Required.
-	/// <i>(if a numeric value is desired, use LONG instead of ULONG </i>
-	/// <i>to maximize compatibility across Java and C#. if a string </i>
-	/// <i>value, use string equivalent of a unique value such as GUID.)</i>
-	/// </summary>
-	public string ID = "";
-	/// <summary>
-	/// Text describing the value of this Property for the
-	/// KPI Definition. Required.
-	/// </summary>
-	public string Value = "";
-	/// <summary>
-	/// This KPI Definition Property may include other KPI Definition Properties
-    /// Here we go with the actual properties, not ID references to them.
-	/// </summary>
-	public List<KPI_Definition_Property> m_KPI_Definition_Property;
-
+namespace MESA.KPIML
+{
     /// <summary>
-    /// Constructor
+    /// MESA KPI Definition Property class. Referenceable by ID.
+    /// See http://mesa.org/en/kpiml.asp and https://github.com/MESAInternational/KPI-ML/ for more information.
     /// </summary>
-	public KPI_Definition_Property(){
+    public class KPI_Definition_Property
+    {
+        /// <summary>
+        /// Unique identifier for this Property of the KPI Definition.
+        /// Required.
+        /// <i>(if a numeric value is desired, use LONG instead of ULONG </i>
+        /// <i>to maximize compatibility across Java and C#. if a string </i>
+        /// <i>value, use string equivalent of a unique value such as GUID.)</i>
+        /// </summary>
+        public string ID = "";
 
-	}
+        /// <summary>
+        /// Text describing the value of this Property for the
+        /// KPI Definition. Required.
+        /// </summary>
+        public string Value = "";
 
-    /// <summary>
-    /// Destructor
-    /// </summary>
-	~KPI_Definition_Property(){
+        /// <summary>
+        /// Description text(s) for this Property of the
+        /// KPI Definition. Optional.
+        /// </summary>
+        public List<string> Description = new List<string>();
 
-	}
+        /// <summary>
+        /// This KPI Definition Property may include other KPI Definition Properties
+        /// Here we go with the actual properties, not ID references to them.
+        /// </summary>
+        public List<KPI_Definition_Property> m_KPI_Definition_Property = new List<KPI_Definition_Property>();
 
-}//end KPI_Definition_Property
+        /// <summary>
+        /// Constructor (auto-generated)
+        /// </summary>
+        public KPI_Definition_Property()
+        {
+
+        }
+
+        /// <summary>
+        /// Destructor (auto-generated)
+        /// </summary>
+        ~KPI_Definition_Property()
+        {
+
+        }
+
+    }//end KPI_Definition_Property
+}

@@ -5,64 +5,67 @@
 //  Created on:      22-Oct-2015 10:06:06 PM
 //  Original author: dnbrandl
 //  Code generator/author: kjsmiley
-//  Last revised 2016-08-03
+//  Last revised 2016-08-05
 //  The KPI Markup Language (KPI-ML) is used courtesy of MESA International. 
 ///////////////////////////////////////////////////////////
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
 
-
-
-/// <summary>
-/// MESA KPI Range class.
-/// See http://mesa.org/en/kpiml.asp for more information.
-/// </summary>
-public class KPI_Range {
-
-	/// <summary>
-	/// Description(s) of this KPI Range
-	/// </summary>
-	public List<string> Description = new List<string>{};
-	/// <summary>
-	/// Unique identifier for this KPI Range definition
-	/// <i>(if a numeric value is desired, use LONG instead of ULONG </i>
-	/// <i>to maximize compatibility across Java and C#. for a string,</i>
-	/// <i>consider using string equivalent of a type such as GUID)</i>
-	/// </summary>
-	public string ID = "";
-	/// <summary>
-	/// Lower Limit of this KPI Range
-	/// <i>(NaN if no value is assigned)</i>
-	/// </summary>
-	public double LowerLimit = System.Double.NaN;
-	/// <summary>
-	/// Upper Limit of this KPI Range
-	/// <i>(NaN if no value is assigned)</i>
-	/// </summary>
-	public double UpperLimit = System.Double.NaN;
-	/// <summary>
-	/// This KPI Range may include other KPI Ranges with the given IDs
-	/// </summary>
-    /// <remarks>Why would a range definition include others? and if needed, wouldn't IDs be better than instances?</remarks>
-	public List<KPI_Range> m_KPI_Range = new List<KPI_Range>();
-
+namespace MESA.KPIML
+{
     /// <summary>
-    /// Constructor
+    /// MESA KPI Range class. Referenceable by ID.
+    /// See http://mesa.org/en/kpiml.asp and https://github.com/MESAInternational/KPI-ML/ for more information.
     /// </summary>
-    public KPI_Range()
+    public class KPI_Range
     {
+        /// <summary>
+        /// Unique identifier for this KPI Range definition
+        /// <i>(if a numeric value is desired, use LONG instead of ULONG </i>
+        /// <i>to maximize compatibility across Java and C#. for a string,</i>
+        /// <i>consider using string equivalent of a C# unique type such as GUID)</i>
+        /// </summary>
+        public string ID = "";
 
-	}
+        /// <summary>
+        /// Description(s) of this KPI Range
+        /// </summary>
+        public List<string> Description = new List<string> { };
 
-    /// <summary>
-    /// Destructor
-    /// </summary>
-    ~KPI_Range()
-    {
+        /// <summary>
+        /// Lower Limit of this KPI Range
+        /// <i>(NaN if no value is assigned)</i>
+        /// </summary>
+        public double LowerLimit = System.Double.NaN;
 
-	}
+        /// <summary>
+        /// Upper Limit of this KPI Range
+        /// <i>(NaN if no value is assigned)</i>
+        /// </summary>
+        public double UpperLimit = System.Double.NaN;
 
-}//end KPI_Range
+        /// <summary>
+        /// This KPI Range may include other KPI Ranges with the given IDs
+        /// </summary>
+        /// <remarks>Why would a range definition include others? and if needed, wouldn't IDs be better than instances?</remarks>
+        public List<KPI_Range> m_KPI_Range = new List<KPI_Range>();
+
+        /// <summary>
+        /// Constructor (auto-generated)
+        /// </summary>
+        public KPI_Range()
+        {
+
+        }
+
+        /// <summary>
+        /// Destructor (auto-generated)
+        /// </summary>
+        ~KPI_Range()
+        {
+
+        }
+
+    }//end KPI_Range
+}

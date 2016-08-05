@@ -5,59 +5,64 @@
 //  Created on:      22-Oct-2015 10:06:06 PM
 //  Original author: dnbrandl
 //  Code generator/author: kjsmiley
-//  Last revised 2016-08-03
+//  Last revised 2016-08-05
 //  The KPI Markup Language (KPI-ML) is used courtesy of MESA International. 
 ///////////////////////////////////////////////////////////
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
 
-
-
-/// <summary>
-/// MESA KPI Instance Property class.
-/// See http://mesa.org/en/kpiml.asp for more information.
-/// </summary>
-public class KPI_Instance_Property {
-
-	/// <summary>
-	/// List of texts describing this Property of the
-	/// KPI Instance. Optional.
-	/// </summary>
-	public List<string> Description = new List<string>{};
-	/// <summary>
-	/// Unique identifier for this Property of the KPI Instance
-	/// <i>(if a numeric value is desired, use LONG instead of ULONG </i>
-	/// <i>to maximize compatibility across Java and C#. for a string,</i>
-	/// <i>consider using string equivalent of a type such as GUID)</i>
-	/// </summary>
-	public string ID = "";
-	/// <summary>
-	/// Text containing the Value of this Property of the
-	/// KPI Instance. Required.
-	/// </summary>
-	public string Value = "";
-	/// <summary>
-	/// This KPI Instance Property may include other KPI Instance Properties
-	/// </summary>
-	public List<KPI_Instance_Property> m_KPI_Instance_Property = new List<KPI_Instance_Property>();
-
+namespace MESA.KPIML
+{
     /// <summary>
-    /// Constructor
+    /// MESA KPI Instance Property class. Referenceable by ID.
+    /// See http://mesa.org/en/kpiml.asp and https://github.com/MESAInternational/KPI-ML/ for more information.
     /// </summary>
-    public KPI_Instance_Property()
+    public class KPI_Instance_Property
     {
+        /// <summary>
+        /// Unique identifier for this Property of the KPI Instance
+        /// </summary>
+        /// <remarks>
+        /// <i>(if a numeric value is desired, use LONG instead of ULONG </i>
+        /// <i>to maximize compatibility across Java and C#. for a string,</i>
+        /// <i>consider using string equivalent of a type such as GUID)</i>
+        /// </remarks>
+        public string ID = "";
 
-	}
+        /// <summary>
+        /// Text containing the Value of this Property of the KPI Instance. 
+        /// <i>Required.</i>
+        /// </summary>
+        public string Value = "";
 
-    /// <summary>
-    /// Destructor
-    /// </summary>
-    ~KPI_Instance_Property()
-    {
+        /// <summary>
+        /// List of texts describing this Property of the KPI Instance. 
+        /// <i>Optional.</i>
+        /// </summary>
+        public List<string> Description = new List<string>();
 
-	}
+        /// <summary>
+        /// This KPI Instance Property may include other KPI Instance Properties 
+        /// (embedded, not referenced by IDs)
+        /// </summary>
+        public List<KPI_Instance_Property> m_KPI_Instance_Property = new List<KPI_Instance_Property>();
 
-}//end KPI_Instance_Property
+        /// <summary>
+        /// Constructor (auto-generated)
+        /// </summary>
+        public KPI_Instance_Property()
+        {
+
+        }
+
+        /// <summary>
+        /// Destructor (auto-generated)
+        /// </summary>
+        ~KPI_Instance_Property()
+        {
+
+        }
+
+    }//end KPI_Instance_Property
+}

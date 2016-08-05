@@ -5,62 +5,69 @@
 //  Created on:      22-Oct-2015 10:06:06 PM
 //  Original author: dnbrandl
 //  Code generator/author: kjsmiley
-//  Last revised 2016-08-03
+//  Last revised 2016-08-05
 //  The KPI Markup Language (KPI-ML) is used courtesy of MESA International. 
 ///////////////////////////////////////////////////////////
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
 
-
-
-/// <summary>
-/// MESA Resource Reference class for KPI-ML.
-/// See http://mesa.org/en/kpiml.asp for more information.
-/// </summary>
-public class Resource_Reference {
-
-	/// <summary>
-	/// Description of this Resource Reference
-	/// </summary>
-	public List<string> Description = new List<string>{};
-	/// <summary>
-	/// Unique identifier for this Resource Reference
-	/// <i>(if a numeric value is desired, use LONG instead of ULONG </i>
-	/// <i>to maximize compatibility across Java and C#. for a string,</i>
-	/// <i>consider using string equivalent of a type such as GUID)</i>
-	/// </summary>
-	public string ID = "";
-	/// <summary>
-	/// Text description of the ID for this Resource Reference
-	/// </summary>
-	public string ResourceID = "";
-	/// <summary>
-	/// Text description of the Type for this Resource Reference.
-	/// <i>See ISA95 standard for valid types (e.g. Equipment)</i>
-	/// </summary>
-	public string ResourceType = "";
-	/// <summary>
-	/// This Resource Reference may include other Resource References with the given IDs
-    /// THIS IS DIFFERENT FROM THE XSD which calls for entire definitions, not just IDs.
-    /// </summary>
-	public List<string> m_Resource_Reference = new List<string>();
-    //public List<Resource_Reference> m_Resource_Reference = new List<Resource_Reference>();
-
+namespace MESA.KPIML
+{
     /// <summary>
-    /// Constructor
+    /// MESA Resource Reference class for KPI-ML. Referenceable by ID.
+    /// See http://mesa.org/en/kpiml.asp and https://github.com/MESAInternational/KPI-ML/ for more information.
     /// </summary>
-	public Resource_Reference(){
+    public class Resource_Reference
+    {
+        /// <summary>
+        /// Unique identifier for this Resource Reference
+        /// </summary>
+        /// <remarks>
+        /// <i>(if a numeric value is desired, use LONG instead of ULONG </i>
+        /// <i>to maximize compatibility across Java and C#. for a string,</i>
+        /// <i>consider using string equivalent of a C# unique type such as GUID)</i>
+        /// </remarks>
+        public string ID = "";
 
-	}
+        /// <summary>
+        /// Text description of the ID for this Resource Reference
+        /// </summary>
+        public string ResourceID = "";
 
-    /// <summary>
-    /// Destructor
-    /// </summary>
-	~Resource_Reference(){
+        /// <summary>
+        /// Text description of the Type for this Resource Reference.
+        /// <i>See ISA95 standard for valid types (e.g. Equipment)</i>
+        /// </summary>
+        public string ResourceType = "";
 
-	}
+        /// <summary>
+        /// Description of this Resource Reference
+        /// </summary>
+        public List<string> Description = new List<string> { };
 
-}//end Resource_Reference
+        /// <summary>
+        /// This Resource Reference may include other Resource References with the given IDs
+        /// </summary>
+        /// <remarks>THIS IS DIFFERENT FROM THE v1.0 .EAP which calls for entire definitions, not just IDs.</remarks>
+        public List<string> m_Resource_Reference = new List<string>();
+        //public List<Resource_Reference> m_Resource_Reference = new List<Resource_Reference>();
+
+        /// <summary>
+        /// Constructor (auto-generated)
+        /// </summary>
+        public Resource_Reference()
+        {
+
+        }
+
+        /// <summary>
+        /// Destructor (auto-generated)
+        /// </summary>
+        ~Resource_Reference()
+        {
+
+        }
+
+    }//end Resource_Reference
+}

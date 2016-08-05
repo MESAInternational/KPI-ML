@@ -252,8 +252,31 @@ function Publish {
 Write-Log " "
 Write-Log "NuGet Packager 2.0.3" -ForegroundColor Yellow
 
-# Make sure the nuget executable is writable
-Set-ItemProperty NuGet.exe -Name IsReadOnly -Value $false
+# KJS 2016-08-05 Get the NuGet.exe from the Solution's NuGet package manager, instead of checking a version into GitHub
+Write-Log " "
+if (Test-Path .\NuGet.exe) {
+	Write-Log "Using existing NuGet.exe from project folder"
+}
+else 
+{
+	# Provided the user has done a Solution build that will build the Unit Test project, and thereby invoke
+	# the NuGet Package Manager on NUnit, we should be guaranteed that a usable NuGet.exe is in the
+	# Solution .nuget folder. The build dependencies try to force this to be the case. So try to copy it.
+	if (Test-Path ..\.nuget\NuGet.exe) 
+	{
+		Write-Log "Copying NuGet.exe from Solution folder to local project"
+		Copy-Item ..\.nuget\NuGet.exe .\NuGet.exe -Verbose -WarningAction Stop -ErrorAction Stop
+		# Sometimes it copies a zero-byte file the first time after a Clean. Simple workaround that seems to solve this: rebuild.
+	}
+	else
+	{
+	    # if not found, the rest of this script will likely fail at the -update self below
+		Write-Log "WARNING: NuGet.exe is not available in Solution folder or in local project - packaging cannot be done."
+	}
+}
+
+# Make sure the newly copied nuget executable is writable
+Set-ItemProperty .\NuGet.exe -Name IsReadOnly -Value $false
 
 # Make sure the nupkg files are writeable and create backup
 if (Test-Path *.nupkg) {

@@ -5,145 +5,173 @@
 //  Created on:      22-Oct-2015 10:06:06 PM
 //  Original author: dnbrandl
 //  Code generator/author: kjsmiley
-//  Last revised 2016-08-03
+//  Last revised 2016-08-05
 //  The KPI Markup Language (KPI-ML) is used courtesy of MESA International. 
 ///////////////////////////////////////////////////////////
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
 
-
-/// <summary>
-/// MESA KPI Definition class.
-/// See http://mesa.org/en/kpiml.asp for more information.
-/// </summary>
-public class KPI_Definition
+namespace MESA.KPIML
 {
-
     /// <summary>
-    /// Audience(s) for this KPI Definition
+    /// MESA KPI Definition class. Referenceable by ID.
+    /// See http://mesa.org/en/kpiml.asp and https://github.com/MESAInternational/KPI-ML/ for more information.
     /// </summary>
-    public List<string> Audience = new List<string> { };
-
-    /// <summary>
-    /// Description text(s) about the KPI Definition
-    /// </summary>
-    public List<string> Description = new List<string> { };
-
-    /// <summary>
-    /// Effect Model(s) for the KPI Definition.
-    /// See ISO-22400 standard for MIME types.
-    /// </summary>
-    public List<string> EffectModel = new List<string> { };
-
-    /// <summary>
-    /// Formula for the KPI Definition
-    /// </summary>
-    public string Formula = "";
-
-    /// <summary>
-    /// HierarchyScope for the KPI Definition
-    /// </summary>
-    /// <remarks>(proposed addition to KPI-ML v1.0+)</remarks>
-    public string HierarchyScope = "";
-
-    /// <summary>
-    /// ID for the KPI Definition. Must be unique.
-    /// <i>(if a numeric value is desired, use LONG instead of ULONG </i>
-    /// <i>to maximize compatibility across Java and C#. for a string,</i>
-    /// <i>consider using string equivalent of a type such as GUID)</i>
-    /// </summary>
-    public string ID = "";
-
-    /// <summary>
-    /// Name for the KPI Definition
-    /// </summary>
-    public string Name = "";
-
-    /// <summary>
-    /// List of Note(s) about the KPI Definition
-    /// </summary>
-    public List<string> Notes = new List<string> { };
-
-    /// <summary>
-    /// Text(s) about the Production Methodology for the KPI Definition
-    /// More than one value is permitted.
-    /// Allowable values are:
-    /// Batch
-    /// Discrete
-    /// Continuous
-    /// Other (provide Other value)
-    /// </summary>
-    public List<string> ProductionMethodology = new List<string> { };
-
-    /// <summary>
-    /// Scope text(s) about the KPI Definition
-    /// <i>e.g. work area, unit, division</i>
-    /// </summary>
-    public List<string> Scope = new List<string> { };
-
-    /// <summary>
-    /// Text about the Timing for the KPI Definition
-    /// Allowable values are:
-    ///  On-Demand
-    ///  Periodically
-    ///  Real-Time
-    /// </summary>
-    public List<string> Timing = new List<string> { };
-
-    /// <summary>
-    /// Text about the desired Trend direction for the KPI Definition
-    /// Allowable values are:
-    ///  higher-is-better
-    ///  lower-is-better
-    ///  other (provide Other value)
-    /// </summary>
-    public string Trend = "";
-
-    /// <summary>
-    /// Text about the Unit of Measure for the KPI Definition
-    /// <i>Unrestricted, but SI units are preferred.</i>
-    /// </summary>
-    public string UnitOfMeasure = "";
-
-    /// <summary>
-    /// KPI Definition Range (manually added, was not auto-generated)
-    /// </summary>
-    public List<KPI_Range> m_KPI_Range;
-
-    /// <summary>
-    /// The KPI Definition Properties with these IDs may apply to the KPI Definition
-    /// </summary>
-    public List<KPI_Definition_Property> m_KPI_Definition_Property = new List<KPI_Definition_Property>();
-
-    /// <summary>
-    /// This KPI Definition includes zero or more KPI Definition Time Ranges
-    /// </summary>
-    public List<KPI_Definition_Time_Range> m_KPI_Definition_Time_Range = new List<KPI_Definition_Time_Range>();
-
-    /// <summary>
-    /// List of IDs for KPI Definitions which this KPI Definition may use in its calculation.
-    /// THIS IS DIFFERENT FROM THE XSD which calls for entire definitions, not just IDs.
-    /// </summary>
-    public List<string> used_in_calculation = new List<string>();
-    //public List<KPI_Definition> used_in_calculation = new List<KPI_Definition>();
-
-    /// <summary>
-    /// Constructor for KPI Definition (auto-generated)
-    /// </summary>
-    public KPI_Definition()
+    public class KPI_Definition
     {
+        /// <summary>
+        /// ID for the KPI Definition. Must be unique.
+        /// <i>(if a numeric value is desired, use LONG instead of ULONG </i>
+        /// <i>to maximize compatibility across Java and C#. for a string,</i>
+        /// <i>consider using string equivalent of a type such as GUID)</i>
+        /// </summary>
+        public string ID = "";
 
-    }
+        /// <summary>
+        /// Name for the KPI Definition
+        /// </summary>
+        public string Name = "";
 
-    /// <summary>
-    /// Destructor for KPI Definition (auto-generated)
-    /// </summary>
-    ~KPI_Definition()
-    {
+        /// <summary>
+        /// Audience(s) for this KPI Definition
+        /// <i>Optional.</i>
+        /// </summary>
+        public List<string> Audience = new List<string>();
 
-    }
+        /// <summary>
+        /// Description text(s) about the KPI Definition
+        /// <i>Optional.</i>
+        /// </summary>
+        public List<string> Description = new List<string>();
 
-}//end KPI_Definition
+        /// <summary>
+        /// Effect Model(s) for the KPI Definition.
+        /// See ISO-22400 standard for MIME types.
+        /// <i>Optional.</i>
+        /// </summary>
+        public List<string> EffectModel = new List<string>();
+
+        /// <summary>
+        /// Formula for the KPI Definition
+        /// </summary>
+        public string Formula = "";
+
+        /// <summary>
+        /// HierarchyScope for the KPI Definition
+        /// <i>Optional.</i>
+        /// </summary>
+        /// <remarks>(proposed addition to KPI-ML v1.0+)</remarks>
+        public List<string> HierarchyScope = new List<string>();
+
+        /// <summary>
+        /// List of Note(s) about the KPI Definition
+        /// <i>Optional.</i>
+        /// </summary>
+        public List<string> Notes = new List<string>();
+
+        /// <summary>
+        /// Text(s) about the Production Methodology for the KPI Definition
+        /// More than one value is permitted.
+        /// Allowable values are:
+        /// Batch
+        /// Discrete
+        /// Continuous
+        /// Other (provide Other value)
+        /// <i>Optional.</i>
+        /// </summary>
+        /// <remarks>KpiMlEnums.ProductionMethodologies contains the list of allowable values.</remarks>
+        public List<string> ProductionMethodology = new List<string>();
+
+        /// <summary>
+        /// Scope text(s) about the KPI Definition
+        /// <i>e.g. work area, unit, division</i>
+        /// <i>Optional.</i>
+        /// </summary>
+        public List<string> Scope = new List<string>();
+
+        /// <summary>
+        /// Text about the Timing for the KPI Definition
+        /// Allowable values are:
+        ///  On-Demand
+        ///  Periodically
+        ///  Real-Time
+        /// <i>Optional.</i>
+        /// </summary>
+        /// <remarks>KpiMlEnums.TimingValues contains the list of allowable values.</remarks>
+        public List<string> Timing = new List<string>();
+
+        /// <summary>
+        /// Text about the desired Trend direction for the KPI Definition
+        /// Allowable values are:
+        ///  higher-is-better
+        ///  lower-is-better
+        ///  other (provide Other value)
+        /// <i>Optional.</i>
+        /// </summary>
+        /// <remarks>KpiMlEnums.TrendValues contains the list of allowable values</remarks>
+        public string Trend = "";
+
+        /// <summary>
+        /// Text about the Unit of Measure for the KPI Definition
+        /// <i>Unrestricted, but SI units are preferred.</i>
+        /// <i>Optional.</i>
+        /// </summary>
+        public string UnitOfMeasure = "";
+
+        /// <summary>
+        /// Range(s) for KPI Definition 
+        /// <i>Optional.</i>
+        /// </summary>
+        /// <remarks>
+        /// Manually added, was not auto-generated - need to check .EAP file
+        /// </remarks>
+        public List<KPI_Range> m_KPI_Range = new List<KPI_Range>();
+
+        /// <summary>
+        /// These KPI Definition Properties apply to the KPI Definition
+        /// <i>Optional.</i>
+        /// </summary>
+        /// <remarks>
+        /// Note that these are embedded Property definitions, not references to Property IDs.
+        /// </remarks>
+        public List<KPI_Definition_Property> m_KPI_Definition_Property = new List<KPI_Definition_Property>();
+
+        /// <summary>
+        /// This KPI Definition includes zero or more KPI Definition Time Ranges
+        /// <i>Optional.</i>
+        /// </summary>
+        /// <remarks>
+        /// Note that these are embedded Range definitions, not references to Range IDs.
+        /// </remarks>
+        public List<KPI_Time_Range> m_KPI_Definition_Time_Range = new List<KPI_Time_Range>();
+
+        /// <summary>
+        /// List of IDs for KPI Definitions which this KPI Definition may use inside its calculation.
+        /// <i>Optional.</i>
+        /// </summary>
+        /// <remarks>
+        /// Note that these are definition IDs, not embedded KPI_Definitions. 
+        /// This is a variation from the code auto-generated from the v1.0 .EAP file.
+        /// </remarks>
+        public List<string> used_in_calculation = new List<string>();
+        //public List<KPI_Definition> used_in_calculation = new List<KPI_Definition>();
+
+        /// <summary>
+        /// Constructor for KPI Definition (auto-generated)
+        /// </summary>
+        public KPI_Definition()
+        {
+            // Everything is initialized by the property definitions above
+        }
+
+        /// <summary>
+        /// Destructor for KPI Definition (auto-generated)
+        /// </summary>
+        ~KPI_Definition()
+        {
+
+        }
+
+    }//end KPI_Definition
+}

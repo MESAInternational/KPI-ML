@@ -10,19 +10,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F5562F5A-3E1F-48F6-9523-DE586FBFED8E}"
 	ProjectSection(SolutionItems) = preProject
+		.nuget\.gitignore = .nuget\.gitignore
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\NuGet20151021.exe = .nuget\NuGet20151021.exe
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPIML.NuGet.Packager", "KPIML.NuGet.Packager\KPIML.NuGet.Packager.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EEC1B04D-AE14-4607-9418-33E35559B1AA} = {EEC1B04D-AE14-4607-9418-33E35559B1AA}
+		{4EC94868-4170-4237-8814-DAD079A84615} = {4EC94868-4170-4237-8814-DAD079A84615}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPIML.Cs", "KPIML\KPIML.Cs.csproj", "{EEC1B04D-AE14-4607-9418-33E35559B1AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPIML.Cs_Helpers", "KPIML_Helpers\KPIML.Cs_Helpers.csproj", "{47D7E9BF-3110-4E2E-8ABE-6F19C9C68383}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPIML_UnitTests", "KPIML_UnitTests\KPIML_UnitTests.csproj", "{4EC94868-4170-4237-8814-DAD079A84615}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packages", "packages", "{05E408F2-2070-4056-B2F6-B2A47B9BFE10}"
+	ProjectSection(SolutionItems) = preProject
+		packages\repositories.config = packages\repositories.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +46,10 @@ Global
 		{EEC1B04D-AE14-4607-9418-33E35559B1AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEC1B04D-AE14-4607-9418-33E35559B1AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEC1B04D-AE14-4607-9418-33E35559B1AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47D7E9BF-3110-4E2E-8ABE-6F19C9C68383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47D7E9BF-3110-4E2E-8ABE-6F19C9C68383}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47D7E9BF-3110-4E2E-8ABE-6F19C9C68383}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47D7E9BF-3110-4E2E-8ABE-6F19C9C68383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EC94868-4170-4237-8814-DAD079A84615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EC94868-4170-4237-8814-DAD079A84615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EC94868-4170-4237-8814-DAD079A84615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EC94868-4170-4237-8814-DAD079A84615}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

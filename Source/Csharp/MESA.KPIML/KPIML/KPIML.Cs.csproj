@@ -38,23 +38,16 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\KPI_Definition.cs" />
     <Compile Include="src\KPI_Definition_Property.cs" />
-    <Compile Include="src\KPI_Definition_Time_Range.cs" />
     <Compile Include="src\KPI_Instance.cs" />
     <Compile Include="src\KPI_Instance_Property.cs" />
-    <Compile Include="src\KPI_Instance_Time_Range.cs" />
     <Compile Include="src\KPI_Range.cs" />
     <Compile Include="src\KPI_Value.cs" />
     <Compile Include="src\KPI_Value_Property.cs" />
-    <Compile Include="src\KPI_Value_Time_Range.cs" />
     <Compile Include="src\Resource_Reference.cs" />
     <Compile Include="src\KpiMlEnums.cs" />
     <Compile Include="src\KPI_TimeRange.cs" />
