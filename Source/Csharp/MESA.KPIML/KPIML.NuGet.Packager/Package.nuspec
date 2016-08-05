@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MESA.KPIML</id>
+    <version>2.0.0.0001</version>
+    <title>MESA.KPIML</title>
+    <!-- NuGet package created by Karen Smiley of ABB for MESA International -->
+    <authors>MESA International</authors>
+    <owners>MESA International</owners>
+    <summary>
+      MESA KPI-ML v2.0 support in C# .NET
+    </summary>
+    <description>
+      MESA KPI-ML (Key Performance Indicator Markup Language) in C# .NET
+      See http://mesa.org/en/kpiml.asp and https://github.com/MESAInternational/KPI-ML/ for more information.
+    </description>
+    <releaseNotes>
+      First release of C#/.NET code initially auto-generated from the .EAP file for KPI-ML v1.0. Updated for KPI-ML v2.0.
+    </releaseNotes>
+    <language>en-US</language>
+    <projectUrl>https://github.com/MESAInternational/KPI-ML/</projectUrl>
+    <iconUrl>http://www.mesa.org/en/resources/KPI-ML2.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <copyright>The KPI Markup Language (KPI-ML) is used courtesy of MESA International.</copyright>
+    <!-- dependencies>
+        <group targetFramework="net45">
+          <dependency id="log4net" version="1.2.10" />
+        </group>
+    </dependencies -->
+    <references></references>
+    <tags>MESA, XML, KPIML, KPI-ML</tags>
+  </metadata>
+  <files>
+    <file src="..\KPIML\bin\Release\" target="lib\net45\" />
+  </files>
+</package>
