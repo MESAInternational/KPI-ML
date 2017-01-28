@@ -208,7 +208,7 @@
                                                     minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "TimeRange"               type = "TimeRangeType"    
                                                     minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Audience"                type = "AudianceType"    
+      <xsd:element name = "Audience"                type = "AudienceType"    
                                                     minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "ProductionMethodology"   type = "ProductionMethodologyType"    
                                                     minOccurs = "0" maxOccurs = "unbounded"/>
@@ -250,7 +250,7 @@
                                                     minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "TimeRange"               type = "TimeRangeType"    
                                                     minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Audience"                type = "AudianceType"    
+      <xsd:element name = "Audience"                type = "AudienceType"    
                                                     minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "ProductionMethodology"   type = "ProductionMethodologyType"    
                                                     minOccurs = "0" maxOccurs = "unbounded"/>
@@ -293,7 +293,7 @@
   <!-- Secondary Types  -->
      <!--     -->  
 
-    <xsd:complexType name="AudianceType">
+    <xsd:complexType name="AudienceType">
         <xsd:simpleContent>
             <xsd:restriction base="IdentifierType"/>
         </xsd:simpleContent>
